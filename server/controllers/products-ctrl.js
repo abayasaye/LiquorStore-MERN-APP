@@ -1,7 +1,7 @@
-const teamModel = require('../models/team-model')
+const productsModel = require('../models/products-model')
 
-const getTeams =async (req,res)=>{
-    await teamModel.find({})
+const getProducts =async (req,res)=>{
+    await productsModel.find({})
     .then((result,err)=>{
         if (err) {
             return res.status(400).json({success:false,message:err})
@@ -19,8 +19,13 @@ const getTeams =async (req,res)=>{
     })
 }
 
-const addTeams = async (req , res)=>{
-    await teamModel.insertMany(req.body.team)
+const getById = async (req , res)=>{
+    await productsModel.findById(req.body.product)
+    .then(()=>{})
+}
+
+const createProducts = async (req , res)=>{
+    await productsModel.insertMany(req.body.team)
     .then((result)=>{
         res.status(200).json({success:true , message:"add team success"})
     })
@@ -28,6 +33,6 @@ const addTeams = async (req , res)=>{
 }
 
 module.exports = {
-    getTeams,
-    addTeams
+    getProducts,
+    createProducts
 }
