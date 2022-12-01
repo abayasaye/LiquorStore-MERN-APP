@@ -22,6 +22,7 @@ const getProducts =async (req,res)=>{
 const getById = async (req , res)=>{
     await productsModel.findById(req.body.product)
     .then(()=>{})
+    .catch(()=>{})
 }
 
 const createProducts = async (req , res)=>{

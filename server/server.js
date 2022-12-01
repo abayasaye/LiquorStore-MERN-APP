@@ -9,14 +9,16 @@ const cors = require("cors");
 require("./DB/")
 const passport = require("passport");
 require("./config/passport")(passport)
-const routerProducts= require('./routes/products-route')
+const productsRouter= require('./routes/products-route');
+const userRouter = require("./routes/user-route");
 
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(passport.initialize())
 
-app.use('/teams',routerProducts)
+app.use('/products',productsRouter)
+app.use('/users',userRouter)
 
 app.get("/" , (req,res)=>{
     res.send({message:"success"})
