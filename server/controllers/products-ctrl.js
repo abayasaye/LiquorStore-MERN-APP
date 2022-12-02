@@ -20,10 +20,16 @@ const getProducts =async (req,res)=>{
 }
 
 const getById = async (req , res)=>{
-    await productsModel.findById(req.body.product)
-    .then(()=>{})
-    .catch(()=>{})
+    await productsModel.findById(req.params.product)
+    .then((product)=>{
+        if(!product){
+            return res.json({success:false , message:"there is no product"})
+        }
+        return res.status(200).json({success:true , product})
+    })  
+    .catch((error)=>{res.   aaaas})
 }
+    
 
 const createProducts = async (req , res)=>{
     await productsModel.insertMany(req.body.team)
@@ -33,7 +39,3 @@ const createProducts = async (req , res)=>{
     .catch((error)=>{res.status(400).json({success:false , error})})
 }
 
-module.exports = {
-    getProducts,
-    createProducts
-}
