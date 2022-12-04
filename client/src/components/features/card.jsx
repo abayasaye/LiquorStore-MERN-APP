@@ -1,0 +1,61 @@
+import React from 'react'
+import {
+    MDBRow,
+    MDBCol,
+    MDBIcon
+  } from 'mdb-react-ui-kit';
+const Card = ({categories,department ,info,products,stores}) => {
+    return (
+    <div>
+    <MDBRow className=" justify-content-around" >
+        <MDBCol size={3} className="square border m-2">
+    <MDBIcon fas icon="shopping-basket" />
+    <br />
+        products 
+        {
+            products.map((data)=><h4 className=' text-primary'>{data.total}</h4>)
+        }
+        total
+        </MDBCol>
+        <MDBCol size={3} className="square border m-2">
+        <MDBIcon fas icon="store" />
+        <br />
+        stores
+        {
+            stores.map((data)=><h4 className=' text-primary'>{data.total}</h4>)
+        }
+        total
+        </MDBCol>
+        <MDBCol className="square border m-2">
+        <MDBIcon fas icon="info" />
+        <br />
+        info
+        {
+            info.map((data)=><h4 className=' text-primary'>{data.total}</h4>)
+        }
+        total
+        </MDBCol>
+        <MDBCol className="square border m-2">
+        <MDBIcon fas icon="list" />
+        <br />
+        categories
+        {
+            categories.map((data)=><h4 className=' text-primary'>{data.total}</h4>)
+        }
+        total
+        </MDBCol>
+        <MDBCol className="square border m-2">
+        <MDBIcon far icon="list-alt" />
+        <br />
+        departments
+        {
+            department.map((data)=><h4 className=' text-primary'>{data.total}</h4>)
+        }
+        total
+        </MDBCol>
+    </MDBRow>
+    </div>
+  )
+}
+
+export default Card

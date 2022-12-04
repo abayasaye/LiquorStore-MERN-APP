@@ -1,6 +1,6 @@
 export const departmentsData = async ()=>{
     try {
-    return await fetch("http://localhost:3000/departments")
+        return await fetch("http://localhost:3000/department")
     .then((result)=>
         result.json())
     }

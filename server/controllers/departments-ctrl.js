@@ -32,7 +32,7 @@ const getById = async (req , res)=>{
  
 const createDepartment = async (req, res) => {
     await departmentModel.insertMany(req.body)
-        .then(() => res.status(300).json({ success: true, massage: "department added successfully" }))
+        .then(() => res.status(200).json({ success: true, massage: "department added successfully" }))
         .catch((error) => res.status(400).json({ success: false, error }))
 }
 

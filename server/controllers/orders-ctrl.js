@@ -32,7 +32,7 @@ const getById = async (req , res)=>{
  
 const createOrder = async (req, res) => {
     await ordersModel.insertMany(req.body)
-        .then(() => res.status(300).json({ success: true, massage: "order added successfully" }))
+        .then(() => res.status(200).json({ success: true, massage: "order added successfully" }))
         .catch((error) => res.status(400).json({ success: false, error }))
 }
 

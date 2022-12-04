@@ -1,7 +1,7 @@
 import React from 'react'
 import { createContext, useContext, useEffect, useState } from "react";
 import { categoriesData } from "../services/categoriesService";
-import { departmentData } from "../services/departmentsService";
+import { departmentsData } from "../services/departmentsService";
 import { infoData } from "../services/infoService";
 import { ordersData } from "../services/ordersService";
 import { productsData } from "../services/productsService";
@@ -23,7 +23,7 @@ export const DataContextProvider = ({ children }) => {
 
 useEffect(() => {
   categoriesData().then((res) => setCategory(res.message));
-  departmentData().then((res) => setDepartment(res.message));
+  departmentsData().then((res) => setDepartment(res?.message));
   infoData().then((res) => setInfo(res.message));
   ordersData().then((res) => setOrders(res.message));
   productsData().then((res) => setProducts(res.message));
