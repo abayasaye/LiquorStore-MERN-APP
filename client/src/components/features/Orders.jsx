@@ -11,7 +11,7 @@ const Orders = () => {
     <>
     <MDBRow className=' p-5'>
   <MDBCol className="square border m-2">
-    user in last 30 days
+    user in the last 30 days
   <CircularProgressbarWithChildren value={66} strokeWidth={3}>
     <strong>78</strong>
   <div style={{fontSize: 20, marginTop: -5}}>
@@ -20,7 +20,7 @@ const Orders = () => {
 </CircularProgressbarWithChildren>
   </MDBCol>
   <MDBCol className="square border m-2">
-  orders in last 30 days 
+  orders in last 30days 
 <CircularProgressbarWithChildren value={66} strokeWidth={3}>
     <strong>200</strong>
   <div style={{fontSize: 20, marginTop: -5}}>
@@ -33,12 +33,12 @@ const Orders = () => {
     <MDBTable responsive>
     <MDBTableHead className=''>
       <tr>
-        <th scope='order number'>price</th>
-        <th scope='name'>products</th>
-        <th scope='address'>Date</th>
-        <th scope='date'>address</th>
-        <th scope='products number'>name</th>
-        <th scope='price'>orderNumber</th>
+        <th scope='price'>price</th>
+        <th scope='products number'>products</th>
+        <th scope='date'>Date</th>
+        <th scope='address'>address</th>
+        <th scope='name'>name</th>
+        <th scope=' order number'>orderNumber</th>
       </tr>
     </MDBTableHead>
     <MDBTableBody>
@@ -56,30 +56,6 @@ const Orders = () => {
                 )
             })
         }
-      {/* <tr>
-        <td>1</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>@fat</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <td>22</td>
-        <td >Larry the Bird</td>
-        <td>@twitter</td>
-        <td>@twitter</td>
-        <td>@twitter</td>
-        <td>@twitter</td>
-      </tr> */}
     </MDBTableBody>
   </MDBTable>
   </MDBCol>
