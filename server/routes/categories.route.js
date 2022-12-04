@@ -9,8 +9,8 @@ const {
 
 categoriesRouter.get('/',getCategories)
 categoriesRouter.get("/getById/:id" , getById)
-categoriesRouter.post("/addProducts" , createCategory)
-categoriesRouter.put("/updateProducts" , updateCategory)
-categoriesRouter.delete("/deleteProducts" , deleteCategory)
+categoriesRouter.post("/addCategory" , createCategory)
+categoriesRouter.put("/updateCategory" , updateCategory)
+categoriesRouter.delete("/deleteCategory" , deleteCategory)
 
 module.exports = categoriesRouter;

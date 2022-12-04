@@ -31,7 +31,7 @@ const getById = async (req , res)=>{
 }
  
 const createCategory = async (req, res) => {
-    await categoriesModel.insertMany(req.body.category)
+    await categoriesModel.insertMany(req.body)
         .then(() => res.status(300).json({ success: true, massage: "category added successfully" }))
         .catch((error) => res.status(400).json({ success: false, error }))
 }

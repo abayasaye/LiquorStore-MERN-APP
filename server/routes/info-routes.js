@@ -9,8 +9,8 @@ const {
 
 infoRouter.get('/',getInfo)
 infoRouter.get("/getById/:id" , getById)
-infoRouter.post("/addProducts" , createInfo)
-infoRouter.put("/updateProducts" , updateInfo)
-infoRouter.delete("/deleteProducts" , deleteInfo)
+infoRouter.post("/addInfo" , createInfo)
+infoRouter.put("/updateInfo" , updateInfo)
+infoRouter.delete("/deleteInfo" , deleteInfo)
 
 module.exports = infoRouter;

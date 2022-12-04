@@ -31,8 +31,8 @@ const getById = async (req , res)=>{
 }
  
 const createProduct = async (req, res) => {
-    await productsModel.insertMany(req.body.product)
-        .then(() => res.status(300).json({ success: true, massage: "product added successfully" }))
+    await productsModel.insertMany(req.body)
+        .then(() => res.status(200).json({ success: true, massage: "product added successfully" }))
         .catch((error) => res.status(400).json({ success: false, error }))
 }
 

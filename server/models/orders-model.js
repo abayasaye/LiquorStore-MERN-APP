@@ -8,9 +8,7 @@ const shoesSchema = new Schema ({
     date:{type:String},
     productsNum:{type:Number},
     quantity:{type:Number},
-    sum:{type:Boolean},
-    isDrift:{type:Boolean},
     total:{type:Number}
 })
 
-module.exports = mongoose.model("shoes" , shoesSchema)
+module.exports = mongoose.model("order" , shoesSchema)

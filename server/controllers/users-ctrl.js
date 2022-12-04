@@ -1,14 +1,14 @@
-const userModel = require("../models/users-model");
+const usersModel = require("../models/users-model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const registerValidate = require("../validation/register");
 const loginValidate = require("../validation/login");
 const key = process.env.SECRET_KEY;
 
-const register = async ()=>{
-    const {isValid , errors} = registerValidate
+const register = async (req, res)=>{
+    const {isValid , errors} = registerValidate(req.body.user)
     if(!isValid) return res.status(400).json(errors);
-    userModel.findOne({email:req.body.user.email}, (err , user)=>{
+    usersModel.findOne({email:req.body.user.email}, (err , user)=>{
         if(err) return res.status(400).json(err);
         if(user) return res.json({message:"email already taken"});
         bcrypt
@@ -17,7 +17,7 @@ const register = async ()=>{
             bcrypt.hash(req.body.user.password , salt)
             .then(async (hashPassword)=>{
                 req.body.user.password = hashPassword;
-                await userModel
+                await usersModel
                 .insertMany(req.body.user)
                 .then(()=>res.json({message:"success"}))
                 .catch((err) => res.json(err))
@@ -42,7 +42,7 @@ const login = async (req ,res)=>{
     if(!isValid) return res.status(400).json(errors)
     const email = req.body.user.email;
     const password = req.body.user.password;
-    await userModel.findOne({email}).then((user) =>{
+    await usersModel.findOne({email}).then((user) =>{
         if(!user){
             return res.status(403).json({emailNotFound: "email not found"});
         }

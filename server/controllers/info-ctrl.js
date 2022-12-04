@@ -31,8 +31,8 @@ const getById = async (req , res)=>{
 }
  
 const createInfo = async (req, res) => {
-    await infoModel.insertMany(req.body.info)
-        .then(() => res.status(300).json({ success: true, massage: "info added successfully" }))
+    await infoModel.insertMany(req.body)
+        .then(() => res.status(200).json({ success: true, massage: "info added successfully" }))
         .catch((error) => res.status(400).json({ success: false, error }))
 }
 

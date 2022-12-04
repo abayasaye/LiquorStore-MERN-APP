@@ -13,7 +13,7 @@ module.exports = validateRegister = (user)=>{
     if(validator.isEmpty(user.email)) errors.email = "email is required";
     if(!validator.isEmail(user.email)) errors.email = "email must be valid";
     if(validator.isEmpty(user.password)) errors.password = "password is required";
-    if(!validator.equals(user.password , confirmPassword)) errors.name = "first name is required";
+    if(!validator.equals(user.password , user.confirmPassword)) errors.name = "first name is required";
     
 return {
         errors,

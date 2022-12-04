@@ -12,8 +12,10 @@ require("./config/passport")(passport)
 const productsRouter= require('./routes/products-route');
 const categoriesRouter= require("./routes/categories.route");
 const departmentRouter= require("./routes/departments-routs");
-
-const userRouter = require("./routes/user-route");
+const infoRouter = require("./routes/info-routes")
+const ordersRouter = require("./routes/orders-routes")
+const storesRouter = require("./routes/stores-routes")
+const userRouter = require("./routes/users-route");
 
 app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
@@ -23,6 +25,9 @@ app.use(passport.initialize())
 app.use('/products',productsRouter)
 app.use("/categories",categoriesRouter)
 app.use("/department" , departmentRouter)
+app.use("/info" , infoRouter)
+app.use("/orders" , ordersRouter)
+app.use("/stores" , storesRouter)
 app.use('/users',userRouter)
 
 app.get("/" , (req,res)=>{

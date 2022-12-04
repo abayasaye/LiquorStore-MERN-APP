@@ -9,8 +9,8 @@ const {
 
 departmentRouter.get('/',getDepartments)
 departmentRouter.get("/getById/:id" , getById)
-departmentRouter.post("/addProducts" , createDepartment)
-departmentRouter.put("/updateProducts" , updateDepartment)
-departmentRouter.delete("/deleteProducts" , deleteDepartment)
+departmentRouter.post("/addDepartment" , createDepartment)
+departmentRouter.put("/updateDepartment" , updateDepartment)
+departmentRouter.delete("/deleteDepartment" , deleteDepartment)
 
 module.exports = departmentRouter;
