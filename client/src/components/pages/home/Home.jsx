@@ -4,6 +4,7 @@ import { useDataContext } from '../../../context/dataContext'
 import {BarChart} from '../../features/BarChart'
 import Card from '../../features/card'
 import Header from '../../features/header'
+import Orders from '../../features/Orders'
 
 
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
     <Header/>
     <Card categories={category} department={department} info={info} products={products} stores={stores}/>
     <BarChart/>
+    <Orders/>
     </MDBContainer>
     </div>
   )

@@ -5,8 +5,7 @@ const shoesSchema = new Schema ({
     orderNumber:{type:Number},
     name:{type:String},
     address:{type:String},
-    date:{type: Date,
-        default: Date.now},
+    date:{type: String},
     productsNum:{type:Number},
     price:{type:String}
 })
