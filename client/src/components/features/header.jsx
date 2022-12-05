@@ -4,7 +4,7 @@ const Header = ()=>{
     return(
         <MDBNavbar bgColor="blue" className="">
         <img className=" w-25" src="/LiquorStore-Logo.png" alt="" />
-        <MDBIcon fas icon="user-alt"/>
+        <MDBIcon className='ms-1' icon='user' size='2x' />
         </MDBNavbar>
     )
 }

@@ -19,6 +19,7 @@ function Home() {
     </MDBContainer>
     </div>
   )
-}
+    }
+
 
 export default Home
