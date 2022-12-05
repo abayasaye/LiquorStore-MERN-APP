@@ -1,10 +1,11 @@
 const mongoose = require('mongoose')
-
 const schema = mongoose.Schema
 
-const Team = new schema({
-    location:{type:Number,required:true},
-    nameTeam:{type:String,required:true},
+const storesSchema = new schema({
+    location:{type:String,required:true},
+    storeName:{type:String,required:true},
+    total:{type:Number,required:true}
+
 })
 
-module.exports = mongoose.model('Team',Team)
+module.exports = mongoose.model('store',storesSchema)

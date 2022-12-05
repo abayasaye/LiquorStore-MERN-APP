@@ -1,7 +1,7 @@
-const productsModel = require('../models/products-model')
+const categoriesModel = require("../models/categories-model")
 
-const getProducts =async (req,res)=>{
-    await productsModel.find({})
+const getCategories =async (req,res)=>{
+    await categoriesModel.find({})
     .then((result,err)=>{
         if (err) {
             return res.status(400).json({success:false,message:err})
@@ -20,39 +20,39 @@ const getProducts =async (req,res)=>{
 }
 
 const getById = async (req , res)=>{
-    await productsModel.findById(req.params.product)
-    .then((product)=>{
-        if(!product){
-            return res.json({success:false , message:"there is no product"})
+    await categoriesModel.findById(req.params.category)
+    .then((category)=>{
+        if(!category){
+            return res.json({success:false , message:"there is no category"})
         }
-        return res.status(200).json({success:true , product})
+        return res.status(200).json({success:true , Category})
     })  
     .catch(error => res.status(400).json({ success: false, error }))
 }
  
-const createProduct = async (req, res) => {
-    await productsModel.insertMany(req.body)
-        .then(() => res.status(200).json({ success: true, massage: "product added successfully" }))
+const createCategory = async (req, res) => {
+    await categoriesModel.insertMany(req.body)
+        .then(() => res.status(300).json({ success: true, massage: "category added successfully" }))
         .catch((error) => res.status(400).json({ success: false, error }))
 }
 
-const updateProduct = async (req, res) => {
-    await productsModel.findByIdAndUpdate(req.params.id, req.body.product)
+const updateCategory = async (req, res) => {
+    await categoriesModel.findByIdAndUpdate(req.params.id, req.body.category)
         .then(result => res.status(200).json({ success: true, result }))
         .catch(error => res.status(400).json({ success: false, error }))
 }
-const deleteProduct = async (  req, res) => {
-    await productsModel.findByIdAndDelete(req.params.id)
+const deleteCategory = async (  req, res) => {
+    await categoriesModel.findByIdAndDelete(req.params.id)
         .then(() => res.status(300).json({ success: true }))
         .catch(error => res.status(400).json({ success: false ,error}))
 }
 
 
 module.exports = {
-    getProducts,
+    getCategories,
     getById,
-    createProduct,
-    updateProduct,
-    deleteProduct
+    createCategory,
+    updateCategory,
+    deleteCategory
 }
 

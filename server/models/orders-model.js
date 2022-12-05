@@ -2,15 +2,12 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema;
 
 const shoesSchema = new Schema ({
-    id:{type:Number},
-    shoesType:{type:String},
-    company:{type:String},
-    model:{type:String},
-    price:{type:Number},
-    quantity:{type:Number},
-    isShort:{type:Boolean},
-    isDrift:{type:Boolean},
-    img:{type:String}
+    orderNumber:{type:Number},
+    name:{type:String},
+    address:{type:String},
+    date:{type: String},
+    productsNum:{type:Number},
+    price:{type:String}
 })
 
-module.exports = mongoose.model("shoes" , shoesSchema)
+module.exports = mongoose.model("order" , shoesSchema)

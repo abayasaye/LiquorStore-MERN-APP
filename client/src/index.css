@@ -5,9 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.newOrdersTable{
+  height:50%;
+}
+.h4-text{
+  color: #2ec4b6;
+}
+strong{
+  color:#2ec4b6;
+  font-size:30px;
+}
+.divCardBox{
+  display: flex !important;
+  flex-direction:  column !important;
 }

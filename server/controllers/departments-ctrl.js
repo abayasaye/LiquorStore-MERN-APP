@@ -1,7 +1,7 @@
-const productsModel = require('../models/products-model')
+const departmentModel = require('../models/departments- model')
 
-const getProducts =async (req,res)=>{
-    await productsModel.find({})
+const getDepartments =async (req,res)=>{
+    await departmentModel.find({})
     .then((result,err)=>{
         if (err) {
             return res.status(400).json({success:false,message:err})
@@ -20,39 +20,39 @@ const getProducts =async (req,res)=>{
 }
 
 const getById = async (req , res)=>{
-    await productsModel.findById(req.params.product)
-    .then((product)=>{
-        if(!product){
-            return res.json({success:false , message:"there is no product"})
+    await departmentModel.findById(req.params.department)
+    .then((department)=>{
+        if(!department){
+            return res.json({success:false , message:"there is no department"})
         }
-        return res.status(200).json({success:true , product})
+        return res.status(200).json({success:true , department})
     })  
     .catch(error => res.status(400).json({ success: false, error }))
 }
  
-const createProduct = async (req, res) => {
-    await productsModel.insertMany(req.body)
-        .then(() => res.status(200).json({ success: true, massage: "product added successfully" }))
+const createDepartment = async (req, res) => {
+    await departmentModel.insertMany(req.body)
+        .then(() => res.status(200).json({ success: true, massage: "department added successfully" }))
         .catch((error) => res.status(400).json({ success: false, error }))
 }
 
-const updateProduct = async (req, res) => {
-    await productsModel.findByIdAndUpdate(req.params.id, req.body.product)
+const updateDepartment = async (req, res) => {
+    await departmentModel.findByIdAndUpdate(req.params.id, req.body.department)
         .then(result => res.status(200).json({ success: true, result }))
         .catch(error => res.status(400).json({ success: false, error }))
 }
-const deleteProduct = async (  req, res) => {
-    await productsModel.findByIdAndDelete(req.params.id)
+const deleteDepartment = async (  req, res) => {
+    await departmentModel.findByIdAndDelete(req.params.id)
         .then(() => res.status(300).json({ success: true }))
         .catch(error => res.status(400).json({ success: false ,error}))
 }
 
 
 module.exports = {
-    getProducts,
+    getDepartments,
     getById,
-    createProduct,
-    updateProduct,
-    deleteProduct
+    createDepartment,
+    updateDepartment,
+    deleteDepartment
 }
 

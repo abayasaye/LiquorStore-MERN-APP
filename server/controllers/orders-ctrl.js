@@ -1,7 +1,7 @@
-const productsModel = require('../models/products-model')
+const ordersModel = require('../models/orders-model')
 
-const getProducts =async (req,res)=>{
-    await productsModel.find({})
+const getOrder =async (req,res)=>{
+    await ordersModel.find({})
     .then((result,err)=>{
         if (err) {
             return res.status(400).json({success:false,message:err})
@@ -20,39 +20,39 @@ const getProducts =async (req,res)=>{
 }
 
 const getById = async (req , res)=>{
-    await productsModel.findById(req.params.product)
-    .then((product)=>{
-        if(!product){
-            return res.json({success:false , message:"there is no product"})
+    await ordersModel.findById(req.params.order)
+    .then((order)=>{
+        if(!order){
+            return res.json({success:false , message:"there is no order"})
         }
-        return res.status(200).json({success:true , product})
+        return res.status(200).json({success:true , order})
     })  
     .catch(error => res.status(400).json({ success: false, error }))
 }
  
-const createProduct = async (req, res) => {
-    await productsModel.insertMany(req.body)
-        .then(() => res.status(200).json({ success: true, massage: "product added successfully" }))
+const createOrder = async (req, res) => {
+    await ordersModel.insertMany(req.body)
+        .then(() => res.status(200).json({ success: true, massage: "order added successfully" }))
         .catch((error) => res.status(400).json({ success: false, error }))
 }
 
-const updateProduct = async (req, res) => {
-    await productsModel.findByIdAndUpdate(req.params.id, req.body.product)
+const updateOrder = async (req, res) => {
+    await ordersModel.findByIdAndUpdate(req.params.id, req.body.order)
         .then(result => res.status(200).json({ success: true, result }))
         .catch(error => res.status(400).json({ success: false, error }))
 }
-const deleteProduct = async (  req, res) => {
-    await productsModel.findByIdAndDelete(req.params.id)
+const deleteOrder = async (  req, res) => {
+    await ordersModel.findByIdAndDelete(req.params.id)
         .then(() => res.status(300).json({ success: true }))
         .catch(error => res.status(400).json({ success: false ,error}))
 }
 
 
 module.exports = {
-    getProducts,
+    getOrder,
     getById,
-    createProduct,
-    updateProduct,
-    deleteProduct
+    createOrder,
+    updateOrder,
+    deleteOrder
 }
 

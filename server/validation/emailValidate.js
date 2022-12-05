@@ -1,3 +1,4 @@
+
 const validateEmail = (email) => {
     const temp = email.indexOf("@")
     const last = email.slice(email.length - 4)
