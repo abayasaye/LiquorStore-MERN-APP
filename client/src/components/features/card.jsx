@@ -6,14 +6,14 @@ import {
   } from 'mdb-react-ui-kit';
 const Card = ({categories,department ,info,products,stores}) => {
     return (
-    <div>
-    <MDBRow className=" justify-content-around" >
-        <MDBCol size={3} className="square border m-2">
+    <div className=''>
+    <MDBRow className=" justify-content-between">
+        <MDBCol size={3}  className="square border m-2 ">
     <MDBIcon fas icon="shopping-basket" />
     <br />
         products 
         {
-            products.map((data)=><h4 className=' text-primary'>{data.total}</h4>)
+            products.map((data)=><h4 className='h4-text'>{data.total}</h4>)
         }
         total
         </MDBCol>
@@ -22,7 +22,7 @@ const Card = ({categories,department ,info,products,stores}) => {
         <br />
         stores
         {
-            stores.map((data)=><h4 className=' text-primary'>{data.total}</h4>)
+            stores.map((data)=><h4 className=' h4-text'>{data.total}</h4>)
         }
         total
         </MDBCol>
@@ -31,7 +31,7 @@ const Card = ({categories,department ,info,products,stores}) => {
         <br />
         info
         {
-            info.map((data)=><h4 className=' text-primary'>{data.total}</h4>)
+            info.map((data)=><h4 className=' h4-text'>{data.total}</h4>)
         }
         total
         </MDBCol>
@@ -40,7 +40,7 @@ const Card = ({categories,department ,info,products,stores}) => {
         <br />
         categories
         {
-            categories.map((data)=><h4 className=' text-primary'>{data.total}</h4>)
+            categories.map((data)=><h4 className='h4-text'>{data.total}</h4>)
         }
         total
         </MDBCol>
@@ -49,7 +49,7 @@ const Card = ({categories,department ,info,products,stores}) => {
         <br />
         departments
         {
-            department.map((data)=><h4 className=' text-primary'>{data.total}</h4>)
+            department.map((data)=><h4 className='h4-text'>{data.total}</h4>)
         }
         total
         </MDBCol>
