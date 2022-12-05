@@ -8,7 +8,7 @@ const Card = ({categories,department ,info,products,stores}) => {
     return (
     <div className=''>
     <MDBRow className=" justify-content-between">
-        <MDBCol size={3}  className="square border m-2 ">
+        <MDBCol size={3}  className="square border m-2">
     <MDBIcon fas icon="shopping-basket" />
     <br />
         products 

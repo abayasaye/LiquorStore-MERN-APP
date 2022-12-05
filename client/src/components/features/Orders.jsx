@@ -15,21 +15,21 @@ const Orders = () => {
   return (
     <>
       <MDBRow className=" p-5">
-        <MDBCol className="square border m-2">
-          user in the last 30 days
+        <MDBCol className="square border m-5 ">
+          user in last 30 days
           <CircularProgressbarWithChildren value={66} strokeWidth={3}>
             <strong>38</strong>
             <div style={{ fontSize: 20, marginTop: -5 }}>from 100</div>
           </CircularProgressbarWithChildren>
         </MDBCol>
-        <MDBCol className="square border m-2">
+        <MDBCol className="square border m-5">
           orders in last 30days
           <CircularProgressbarWithChildren value={35} strokeWidth={3}>
             <strong>{orders.length}</strong>
             <div style={{ fontSize: 20, marginTop: -5 }}>from 50</div>
           </CircularProgressbarWithChildren>
         </MDBCol>
-        <MDBCol className="square border m-2 w-responsive">
+        <MDBCol className="square border  w-responsive">
           new orders
             <MDBTable responsive className="newOrdersTable">
           <div className="newOrdersTable">
