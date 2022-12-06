@@ -34,7 +34,7 @@ export const options = {
   },
 };
 
-const labels = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'sunday'];
+const labels = ['11/11/2022', '12/11/22', '13/11/22', '14/11/22', '15/11/22', '16/11/22', '17/11/22'];
 
 export const data = {
   labels,
