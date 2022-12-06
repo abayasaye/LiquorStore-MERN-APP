@@ -44,9 +44,9 @@ const Orders = () => {
                 </tr>
               </MDBTableHead>
               <MDBTableBody>
-                {orders.map((data) => {
+                {orders.map((data,key) => {
                   return (
-                    <tr>
+                    <tr key={key}>
                       <td>{data.price}</td>
                       <td>{data.productsNum}</td>
                       <td>{data.date}</td>
